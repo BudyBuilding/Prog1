@@ -9,7 +9,6 @@ double square(double x) { return x*x; }
 double sloping_cos(double x) { return cos(x)+slope(x); }
 
 
-
 int main()
 {
 using namespace Graph_lib;

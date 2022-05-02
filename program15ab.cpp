@@ -1,4 +1,4 @@
-// g++ program.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o program `fltk-config --ldflags --use-images`
+// g++ program15ab.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o program `fltk-config --ldflags --use-images`
 
 #include "Simple_window.h"
 #include "Graph.h"
@@ -10,7 +10,6 @@ double sloping_cos(double x) { return cos(x)+slope(x); }
 
 
 
-
 int main()
 {
 using namespace Graph_lib;
@@ -19,16 +18,18 @@ Point orig{300,300};
 
 Simple_window win {tl,600,600,"Canvas"};
 
+//4. axis add
 Axis x{Axis::x, Point{100,300}, 400,
 20};
 
 Axis y{Axis::y, Point{300,500}, 400,
 20};
 
+//5. axis red
 x.set_color(Color::red);
 y.set_color(Color::red);
 
-
+//4., functions
 Function s(one,-10,11, orig, 400, 20, 20);
 Function s2(slope,-10,11,orig,400);
 Function s3(square,-10,11,orig,400);
@@ -36,11 +37,14 @@ Function s3(square,-10,11,orig,400);
 win.attach(s);
 win.attach(s2);
 
+//5.
 Text t(Point{560,150}, "X/2");
 win.attach(t);
 
+//square attach
 win.attach(s3);
 
+//8. another cos, that blue
 Function s4(cos,-10,11,orig,400,20,20);
 s4.set_color(Color::blue);
 
